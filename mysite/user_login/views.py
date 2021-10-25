@@ -6,8 +6,7 @@ from django.http import JsonResponse, HttpResponse
 from rest_framework.authtoken.models import Token
 from django.dispatch import receiver
 from mysite import settings
-from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
+from .models import User
 import os
 import re
 
@@ -21,7 +20,7 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 
 def authentication(request):
     token_str = request.META.get("HTTP_AUTHORIZATION")
-    print(request.META['HTTP_AUTHORIZATION'])
+    # print(request.META['HTTP_AUTHORIZATION'])
     try:
         token = Token.objects.get(key=token_str)
     except:

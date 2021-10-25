@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     # third party app
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders'
+    'corsheaders',
+    
+    # apps
+    'manage_image'
 ]
 
 MIDDLEWARE = [
