@@ -56,9 +56,9 @@ def register(request):
         print('password: ', password)
         user = User.objects.create(username=username, password=password)
         token = Token.objects.get(user=user)
-        data = {'token': str(token), 'user': username, 'message': "true"}
+        data = {'token': str(token), 'username': username, 'message': "true"}
     else:
-        data = {'token': None, 'user': username, 'message': "false"}
+        data = {'token': None, 'username': username, 'message': "false"}
 
     return JsonResponse(data)
 
